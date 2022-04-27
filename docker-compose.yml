@@ -3,11 +3,11 @@ version: '3.7'
 services:
   web:
     build: ./project
-    command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn core.wsgi --bind 0.0.0.0:8005
     volumes:
       - ./project/:/usr/src/app/
     ports:
-      - 8000:8000
+      - 8001:8005
     env_file:
       - ./.env.dev
     depends_on:
