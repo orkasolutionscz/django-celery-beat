@@ -1,4 +1,5 @@
 *.pyc
+*.pid
 __pycache__
 env
 *.sqlite3
